@@ -6,4 +6,7 @@ public final class App {
         return customer.statement();
     }
 
+    public String getHtmlReport(Customer customer) {
+        return customer.htmlStatement();
+    }
 }

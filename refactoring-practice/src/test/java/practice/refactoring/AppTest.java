@@ -36,6 +36,13 @@ public class AppTest {
                 "\tJay and Silent Bob Reboot\t9.0\n" +
                 "Amount owed is 15.0\n" +
                 "You earned 4 frequent renter points");
+
+        String htmlResponse = app.getHtmlReport(customer);
+        Assert.assertEquals(htmlResponse, "<H1>Rentals for <EM>Bob</EM></H1><P>\n" +
+                "Ford vs Ferrari: 6.0<BR>\n" +
+                "Jay and Silent Bob Reboot: 9.0<BR>\n" +
+                "<P>You owe <EM>15.0</EM><P>\n" +
+                "On this rental you earned <EM>4</EM> frequent renter points<P>");
     }
 
     /**
@@ -67,6 +74,13 @@ public class AppTest {
                 "\tInterstelar\t3.5\n" +
                 "Amount owed is 5.5\n" +
                 "You earned 2 frequent renter points");
+
+        String htmlResponse = app.getHtmlReport(customer);
+        Assert.assertEquals(htmlResponse, "<H1>Rentals for <EM>Lisa</EM></H1><P>\n" +
+                "Deadpool 2: 2.0<BR>\n" +
+                "Interstelar: 3.5<BR>\n" +
+                "<P>You owe <EM>5.5</EM><P>\n" +
+                "On this rental you earned <EM>2</EM> frequent renter points<P>");
     }
 
     /**
@@ -98,6 +112,13 @@ public class AppTest {
                 "\tHarry Potter and the Goblet of Fire\t3.0\n" +
                 "Amount owed is 4.5\n" +
                 "You earned 2 frequent renter points");
+
+        String htmlResponse = app.getHtmlReport(customer);
+        Assert.assertEquals(htmlResponse, "<H1>Rentals for <EM>Mark</EM></H1><P>\n" +
+                "Harry Potter and the Philosopher's Stone: 1.5<BR>\n" +
+                "Harry Potter and the Goblet of Fire: 3.0<BR>\n" +
+                "<P>You owe <EM>4.5</EM><P>\n" +
+                "On this rental you earned <EM>2</EM> frequent renter points<P>");
     }
 
 }
