@@ -1,5 +1,6 @@
 package practice.refactoring;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 public class AppTest {
@@ -19,6 +20,22 @@ public class AppTest {
      */
     @Test
     public void rentNewReleasesTest() {
+        Movie movie1 = new Movie("Ford vs Ferrari", Movie.NEW_RELEASE);
+        Rental rental1 = new Rental(movie1, 2);
+
+        Movie movie2 = new Movie("Jay and Silent Bob Reboot", Movie.NEW_RELEASE);
+        Rental rental2 = new Rental(movie2, 3);
+
+        Customer customer = new Customer("Bob");
+        customer.addRental(rental1);
+        customer.addRental(rental2);
+
+        String response = app.getReport(customer);
+        Assert.assertEquals(response, "Rental Record for Bob\n" +
+                "\tFord vs Ferrari\t6.0\n" +
+                "\tJay and Silent Bob Reboot\t9.0\n" +
+                "Amount owed is 15.0\n" +
+                "You earned 4 frequent renter points");
     }
 
     /**
@@ -34,6 +51,22 @@ public class AppTest {
      */
     @Test
     public void rentRegularTest() {
+        Movie movie1 = new Movie("Deadpool 2", Movie.REGULAR);
+        Rental rental1 = new Rental(movie1, 2);
+
+        Movie movie2 = new Movie("Interstelar", Movie.REGULAR);
+        Rental rental2 = new Rental(movie2, 3);
+
+        Customer customer = new Customer("Lisa");
+        customer.addRental(rental1);
+        customer.addRental(rental2);
+
+        String response = app.getReport(customer);
+        Assert.assertEquals(response, "Rental Record for Lisa\n" +
+                "\tDeadpool 2\t2.0\n" +
+                "\tInterstelar\t3.5\n" +
+                "Amount owed is 5.5\n" +
+                "You earned 2 frequent renter points");
     }
 
     /**
@@ -49,6 +82,22 @@ public class AppTest {
      */
     @Test
     public void rentChildrenTest() {
+        Movie movie1 = new Movie("Harry Potter and the Philosopher's Stone", Movie.CHILDRENS);
+        Rental rental1 = new Rental(movie1, 3);
+
+        Movie movie2 = new Movie("Harry Potter and the Goblet of Fire", Movie.CHILDRENS);
+        Rental rental2 = new Rental(movie2, 4);
+
+        Customer customer = new Customer("Mark");
+        customer.addRental(rental1);
+        customer.addRental(rental2);
+
+        String response = app.getReport(customer);
+        Assert.assertEquals(response, "Rental Record for Mark\n" +
+                "\tHarry Potter and the Philosopher's Stone\t1.5\n" +
+                "\tHarry Potter and the Goblet of Fire\t3.0\n" +
+                "Amount owed is 4.5\n" +
+                "You earned 2 frequent renter points");
     }
 
 }
