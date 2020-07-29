@@ -96,10 +96,10 @@ public class AppTest {
      */
     @Test
     public void rentChildrenTest() {
-        Movie movie1 = new Movie("Harry Potter and the Philosopher's Stone", Movie.CHILDRENS);
+        Movie movie1 = new Movie("Harry Potter and the Philosopher's Stone", Movie.CHILDREN);
         Rental rental1 = new Rental(movie1, 3);
 
-        Movie movie2 = new Movie("Harry Potter and the Goblet of Fire", Movie.CHILDRENS);
+        Movie movie2 = new Movie("Harry Potter and the Goblet of Fire", Movie.CHILDREN);
         Rental rental2 = new Rental(movie2, 4);
 
         Customer customer = new Customer("Mark");
