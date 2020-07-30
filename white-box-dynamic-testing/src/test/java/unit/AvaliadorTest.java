@@ -1,7 +1,8 @@
 package unit;
 
-import org.junit.Assert;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class AvaliadorTest {
 
@@ -17,8 +18,8 @@ public class AvaliadorTest {
         Avaliador leiloeiro = new Avaliador();
         leiloeiro.avalia(leilao);
         // Checando os valores esperados
-        Assert.assertEquals(400.0, leiloeiro.getMaiorLance(), 0.001);
-        Assert.assertEquals(250.0, leiloeiro.getMenorLance(), 0.001);
+        assertEquals(400.0, leiloeiro.getMaiorLance(), 0.001);
+        assertEquals(250.0, leiloeiro.getMenorLance(), 0.001);
     }
 
     @Test
@@ -32,8 +33,8 @@ public class AvaliadorTest {
         leilao.propoe(new Lance(maria, 250.0));
         Avaliador leiloeiro = new Avaliador();
         leiloeiro.avalia(leilao);
-        Assert.assertEquals(400.0, leiloeiro.getMaiorLance(), 0.001);
-        Assert.assertEquals(250.0, leiloeiro.getMenorLance(), 0.001);
+        assertEquals(400.0, leiloeiro.getMaiorLance(), 0.001);
+        assertEquals(250.0, leiloeiro.getMenorLance(), 0.001);
     }
 
     @Test
@@ -47,8 +48,8 @@ public class AvaliadorTest {
         leilao.propoe(new Lance(maria, 250.0));
         Avaliador leiloeiro = new Avaliador();
         leiloeiro.avalia(leilao);
-        Assert.assertEquals(400.0, leiloeiro.getMaiorLance(), 0.001);
-        Assert.assertEquals(250.0, leiloeiro.getMenorLance(), 0.001);
+        assertEquals(400.0, leiloeiro.getMaiorLance(), 0.001);
+        assertEquals(250.0, leiloeiro.getMenorLance(), 0.001);
     }
 
     @Test
@@ -58,7 +59,7 @@ public class AvaliadorTest {
         leilao.propoe(new Lance(joao, 300.0));
         Avaliador leiloeiro = new Avaliador();
         leiloeiro.avalia(leilao);
-        Assert.assertEquals(300.0, leiloeiro.getMaiorLance(), 0.0001);
-        Assert.assertEquals(300.0, leiloeiro.getMenorLance(), 0.0001);
+        assertEquals(300.0, leiloeiro.getMaiorLance(), 0.0001);
+        assertEquals(300.0, leiloeiro.getMenorLance(), 0.0001);
     }
 }
