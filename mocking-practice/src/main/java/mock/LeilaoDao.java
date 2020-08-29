@@ -1,7 +1,6 @@
 package mock;
 
 import mock.infraestructure.Database;
-import mock.model.Leilao;
 
 import java.sql.Connection;
 import java.sql.Date;

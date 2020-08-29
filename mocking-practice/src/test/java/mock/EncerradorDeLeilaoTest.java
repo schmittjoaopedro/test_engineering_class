@@ -1,6 +1,5 @@
 package mock;
 
-import mock.model.Leilao;
 import org.junit.Test;
 
 import java.util.Calendar;

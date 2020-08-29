@@ -1,8 +1,6 @@
-package mock.model;
+package mock;
 
-import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.List;
 
 public class Leilao {
 
@@ -13,8 +11,6 @@ public class Leilao {
     private boolean encerrado;
 
     private Calendar data;
-
-    private List<Lance> lances = new ArrayList<>();
 
     public Leilao(String nomeProduto) {
         this.nomeProduto = nomeProduto;
@@ -34,14 +30,6 @@ public class Leilao {
 
     public void setNomeProduto(String nomeProduto) {
         this.nomeProduto = nomeProduto;
-    }
-
-    public void propoe(Lance lance) {
-        lances.add(lance);
-    }
-
-    public List<Lance> getLances() {
-        return lances;
     }
 
     public void encerra() {

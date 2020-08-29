@@ -1,7 +1,5 @@
 package mock;
 
-import mock.model.Leilao;
-
 import java.util.Calendar;
 import java.util.List;
 

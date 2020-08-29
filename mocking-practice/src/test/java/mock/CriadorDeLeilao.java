@@ -1,9 +1,5 @@
 package mock;
 
-import mock.model.Lance;
-import mock.model.Leilao;
-import mock.model.Usuario;
-
 import java.util.Calendar;
 
 public class CriadorDeLeilao {
@@ -12,11 +8,6 @@ public class CriadorDeLeilao {
 
     public CriadorDeLeilao para(String descricao) {
         this.leilao = new Leilao(descricao);
-        return this;
-    }
-
-    public CriadorDeLeilao lance(Usuario usuario, double valor) {
-        leilao.propoe(new Lance(usuario, valor));
         return this;
     }
 
