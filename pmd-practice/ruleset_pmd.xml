@@ -15,6 +15,7 @@
 
     <rule ref="category/java/design.xml">
         <exclude name="ImmutableField"/>
+        <exclude name="DataClass"/>
     </rule>
 
     <rule ref="category/java/errorprone.xml">
