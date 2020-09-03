@@ -22,7 +22,7 @@ public class EncerradorDeLeilaoTest {
         leilaoDao.salva(leilao1);
         leilaoDao.salva(leilao2);
 
-        EncerradorDeLeilao encerrador = new EncerradorDeLeilao();
+        EncerradorDeLeilao encerrador = new EncerradorDeLeilao(leilaoDao);
         encerrador.encerra();
 
         // busca no banco a lista de encerrados
