@@ -1,5 +1,6 @@
 package mock;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class Leilao {
@@ -50,5 +51,15 @@ public class Leilao {
 
     public Calendar getData() {
         return data;
+    }
+
+    @Override
+    public String toString() {
+        return "Leilao{" +
+                "id=" + id +
+                ", nomeProduto='" + nomeProduto + '\'' +
+                ", encerrado=" + encerrado +
+                ", data=" + new SimpleDateFormat("dd/MM/yyyy").format(data.getTime()) +
+                '}';
     }
 }

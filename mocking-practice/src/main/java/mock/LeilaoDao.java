@@ -70,4 +70,10 @@ public class LeilaoDao {
         }
     }
 
+    public void imprimeLeiloes() {
+        System.out.println("Leiloes salvos na base de dados");
+        for (Leilao leilao : correntes()) {
+            System.out.println(leilao);
+        }
+    }
 }
