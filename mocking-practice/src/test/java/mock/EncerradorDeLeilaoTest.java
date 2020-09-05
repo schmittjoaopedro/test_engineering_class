@@ -32,6 +32,10 @@ public class EncerradorDeLeilaoTest {
         // busca no banco a lista de encerrados
         List<Leilao> encerrados = leilaoDao.encerrados();
 
+        // verificando que a atualização foi chamada
+        verify(leilaoDao).atualiza(leilao1);
+        verify(leilaoDao).atualiza(leilao2);
+
         assertEquals(2, encerrados.size());
         assertTrue(encerrados.get(0).isEncerrado());
         assertTrue(encerrados.get(1).isEncerrado());
