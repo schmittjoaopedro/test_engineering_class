@@ -5,8 +5,6 @@ import java.util.List;
 
 public class EncerradorDeLeilao {
 
-    private int total = 0;
-
     private LeilaoDao leilaoDao;
 
     public EncerradorDeLeilao(LeilaoDao leilaoDao) {
@@ -18,7 +16,6 @@ public class EncerradorDeLeilao {
         for (Leilao leilao : todosLeiloesCorrentes) {
             if (comecouSemanaPassada(leilao)) {
                 leilao.encerra();
-                total++;
                 leilaoDao.atualiza(leilao);
             }
         }
@@ -36,10 +33,6 @@ public class EncerradorDeLeilao {
             diasNoIntervalo++;
         }
         return diasNoIntervalo;
-    }
-
-    public int getTotalEncerrados() {
-        return total;
     }
 
 }
