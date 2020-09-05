@@ -1,7 +1,9 @@
 package mock;
 
+import static org.mockito.Mockito.*;
 import org.junit.Test;
 
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
 
@@ -17,10 +19,12 @@ public class EncerradorDeLeilaoTest {
         Leilao leilao1 = new CriadorDeLeilao().para("TV de plasma").naData(antiga).constroi();
         Leilao leilao2 = new CriadorDeLeilao().para("Geladeira").naData(antiga).constroi();
 
-        // Simulando a infra-estrutura
-        LeilaoDao leilaoDao = new LeilaoDao();
-        leilaoDao.salva(leilao1);
-        leilaoDao.salva(leilao2);
+        // Criando o mock
+        LeilaoDao leilaoDao = mock(LeilaoDao.class);
+        // Ensinando o mock a reagir da forma que esperamos
+        List<Leilao> leiloesAntigos = Arrays.asList(leilao1, leilao2);
+        when(leilaoDao.correntes()).thenReturn(leiloesAntigos);
+        when(leilaoDao.encerrados()).thenReturn(leiloesAntigos);
 
         EncerradorDeLeilao encerrador = new EncerradorDeLeilao(leilaoDao);
         encerrador.encerra();
