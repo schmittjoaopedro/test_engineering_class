@@ -27,8 +27,15 @@ public class EncerradorDeLeilaoTest {
         when(leilaoDao.correntes()).thenReturn(leiloesAntigos);
         when(leilaoDao.encerrados()).thenReturn(leiloesAntigos);
 
+        // Criamos um capturador que sabe capturar pagamentos
+        ArgumentCaptor<Pagamento> pagamentos = ArgumentCaptor.forClass(Pagamento.class);
+
         EncerradorDeLeilao encerrador = new EncerradorDeLeilao(leilaoDao);
         encerrador.encerra();
+
+        verify(leilaoDao, times(2)).salvarPagamento(pagamentos.capture());
+        assertEquals(leilao1, pagamentos.getAllValues().get(0).getLeilao());
+        assertEquals(leilao2, pagamentos.getAllValues().get(1).getLeilao());
 
         // verificando que a atualiza��o foi chamada
         verify(leilaoDao).atualiza(leilao1);
