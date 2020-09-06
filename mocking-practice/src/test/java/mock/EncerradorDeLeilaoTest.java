@@ -2,6 +2,7 @@ package mock;
 
 import static org.mockito.Mockito.*;
 import org.junit.Test;
+import org.mockito.ArgumentCaptor;
 
 import java.util.Arrays;
 import java.util.Calendar;
@@ -29,13 +30,12 @@ public class EncerradorDeLeilaoTest {
         EncerradorDeLeilao encerrador = new EncerradorDeLeilao(leilaoDao);
         encerrador.encerra();
 
-        // busca no banco a lista de encerrados
-        List<Leilao> encerrados = leilaoDao.encerrados();
-
         // verificando que a atualiza��o foi chamada
         verify(leilaoDao).atualiza(leilao1);
         verify(leilaoDao).atualiza(leilao2);
 
+        // busca no banco a lista de encerrados
+        List<Leilao> encerrados = leilaoDao.encerrados();
         assertEquals(2, encerrados.size());
         assertTrue(encerrados.get(0).isEncerrado());
         assertTrue(encerrados.get(1).isEncerrado());
