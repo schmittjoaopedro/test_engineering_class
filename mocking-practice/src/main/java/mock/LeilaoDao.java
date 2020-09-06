@@ -43,15 +43,44 @@ public class LeilaoDao {
         }
     }
 
+    public void salvarPagamento(Pagamento pagamento) {
+        try {
+            Connection conn = Database.getConnection();
+            PreparedStatement stmt = conn.prepareStatement("INSERT INTO PAGAMENTO (LEILAO_ID, LEILAO_NOME_PRODUTO) VALUES (?, ?)");
+            stmt.setLong(1, pagamento.getLeilao().getId());
+            stmt.setString(2, pagamento.getLeilao().getNomeProduto());
+            stmt.execute();
+            stmt.close();
+            conn.close();
+        } catch (Exception ex) {
+            throw new RuntimeException(ex);
+        }
+    }
+
     public List<Leilao> correntes() {
-        return buscaPorSql("SELECT * FROM LEILAO");
+        return buscaLeiloesPorSql("SELECT * FROM LEILAO");
     }
 
     public List<Leilao> encerrados() {
-        return buscaPorSql("SELECT * FROM LEILAO WHERE ENCERRADO = true");
+        return buscaLeiloesPorSql("SELECT * FROM LEILAO WHERE ENCERRADO = true");
     }
 
-    private List<Leilao> buscaPorSql(String sql) {
+    public List<Pagamento> pagamentos() {
+        return buscaPagamentosPorSql("SELECT * FROM PAGAMENTO");
+    }
+
+    public void imprimeBase() {
+        System.out.println("Leiloes salvos na base de dados");
+        for (Leilao leilao : correntes()) {
+            System.out.println(leilao);
+        }
+        System.out.println("Pagamentos salvos na base de dados");
+        for (Pagamento pagamento : pagamentos()) {
+            System.out.println(pagamento);
+        }
+    }
+
+    private List<Leilao> buscaLeiloesPorSql(String sql) {
         try {
             Connection con = Database.getConnection();
             ResultSet resultSet = Database.executeQuery(con, sql);
@@ -70,10 +99,22 @@ public class LeilaoDao {
         }
     }
 
-    public void imprimeLeiloes() {
-        System.out.println("Leiloes salvos na base de dados");
-        for (Leilao leilao : correntes()) {
-            System.out.println(leilao);
+    private List<Pagamento> buscaPagamentosPorSql(String sql) {
+        try {
+            Connection con = Database.getConnection();
+            ResultSet resultSet = Database.executeQuery(con, sql);
+            List<Pagamento> pagamentos = new ArrayList<>();
+            while (resultSet.next()) {
+                Leilao leilao = new Leilao(resultSet.getString("LEILAO_NOME_PRODUTO"));
+                leilao.setId(resultSet.getLong("LEILAO_ID"));
+                Pagamento pagamento = new Pagamento(leilao);
+                pagamento.setId(resultSet.getLong("ID"));
+                pagamentos.add(pagamento);
+            }
+            return pagamentos;
+        } catch (Exception ex) {
+            throw new RuntimeException(ex);
         }
     }
+
 }

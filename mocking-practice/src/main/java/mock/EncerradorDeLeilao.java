@@ -17,6 +17,7 @@ public class EncerradorDeLeilao {
             if (comecouSemanaPassada(leilao)) {
                 leilao.encerra();
                 leilaoDao.atualiza(leilao);
+                leilaoDao.salvarPagamento(new Pagamento(leilao));
             }
         }
     }
