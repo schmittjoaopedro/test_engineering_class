@@ -2,8 +2,7 @@ package mock;
 
 import org.junit.Test;
 
-import java.util.Calendar;
-import java.util.List;
+import java.util.*;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
