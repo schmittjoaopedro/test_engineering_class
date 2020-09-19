@@ -4,7 +4,6 @@ import integration.infraestructure.Database;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.sql.Connection;
 import java.sql.ResultSet;
 
 import static org.mockito.Mockito.mock;
@@ -16,11 +15,9 @@ public class UsuarioDaoTest {
     public void deveEncontrarPeloNomeEEmailMockado() throws Exception {
         // Mock
         String sqlConsulta = "SELECT * FROM USUARIO WHERE NAME = 'Joao Schmitt' AND EMAIL = 'joao@schmitt.com'";
-        Connection connection = mock(Connection.class);
         ResultSet resultSet = mock(ResultSet.class);
         Database database = mock(Database.class);
-        when(database.getConnection()).thenReturn(connection);
-        when(database.executeQuery(connection, sqlConsulta)).thenReturn(resultSet);
+        when(database.executeQuery(sqlConsulta)).thenReturn(resultSet);
         when(resultSet.next()).thenReturn(true);
         when(resultSet.getLong("ID")).thenReturn(1L);
         when(resultSet.getString("NOME")).thenReturn("Joao Schmitt");

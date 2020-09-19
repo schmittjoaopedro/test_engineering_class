@@ -2,7 +2,6 @@ package integration.usuario;
 
 import integration.infraestructure.Database;
 
-import java.sql.Connection;
 import java.sql.ResultSet;
 
 public class UsuarioDao {
@@ -14,8 +13,8 @@ public class UsuarioDao {
     }
 
     public Usuario porId(int id) {
-        try (Connection conn = database.getConnection()) {
-            ResultSet resultSet = database.executeQuery(conn, "SELECT * FROM USUARIO WHERE ID = " + id);
+        try {
+            ResultSet resultSet = database.executeQuery("SELECT * FROM USUARIO WHERE ID = " + id);
             Usuario usuario = null;
             if (resultSet.next()) {
                 usuario = new Usuario();
@@ -30,9 +29,8 @@ public class UsuarioDao {
     }
 
     public Usuario buscarPorNomeEEmail(String nome, String email) {
-        try (Connection conn = database.getConnection()) {
-            ResultSet resultSet = database.executeQuery(conn,
-                    "SELECT * FROM USUARIO WHERE NAME = '" + nome + "' AND EMAIL = '" + email + "'");
+        try {
+            ResultSet resultSet = database.executeQuery("SELECT * FROM USUARIO WHERE NAME = '" + nome + "' AND EMAIL = '" + email + "'");
             Usuario usuario = null;
             if (resultSet.next()) {
                 usuario = new Usuario();

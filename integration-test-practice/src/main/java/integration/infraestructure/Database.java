@@ -21,9 +21,9 @@ public class Database {
         }
     }
 
-    public ResultSet executeQuery(Connection conn, String sql) {
+    public ResultSet executeQuery(String sql) {
         try {
-            ResultSet resultSet = conn.createStatement().executeQuery(sql);
+            ResultSet resultSet = getConnection().createStatement().executeQuery(sql);
             return resultSet;
         } catch (Exception ex) {
             throw new RuntimeException(ex);
@@ -45,8 +45,8 @@ public class Database {
         }
     }
 
-    public void executeSql(Connection conn, String sql) {
-        try {
+    public void executeSql(String sql) {
+        try (Connection conn = getConnection()) {
             conn.createStatement().execute(sql);
             conn.commit();
         } catch (Exception ex) {
