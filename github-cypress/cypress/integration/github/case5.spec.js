@@ -5,8 +5,7 @@ context('Case 5', () => {
     })
 
     it('Search for specific issue on choco-solver', () => {
-        cy.get("input:visible[name=q]").type('choco-solver');
-        cy.get("a:visible:contains('choco-solver')").click();
+        cy.get("input:visible[name=q]").type('choco-solver').type("{enter}");
         cy.get("em:visible:contains('choco-solver')").click();
         cy.get("span:visible:contains('Issues')").click();
         cy.get("input:visible[value='is:issue is:open ']").clear()
@@ -17,8 +16,7 @@ context('Case 5', () => {
     })
 
     it('Check number of commits on or-tools', () => {
-        cy.get("input:visible[name=q]").type('or-tools');
-        cy.get("a:contains('or-tools')").click();
+        cy.get("input:visible[name=q]").type('or-tools').type("{enter}");
         cy.get("em:contains('or-tools')").click();
         cy.get("span:visible:contains('Issues')").click();
         cy.get("input:visible[value='is:issue is:open ']").clear()

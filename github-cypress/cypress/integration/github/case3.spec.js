@@ -5,8 +5,7 @@ context('Case 3', () => {
     })
 
     it('Check tag commits on choco-solver', () => {
-        cy.get("input:visible[name=q]").type('choco-solver');
-        cy.get("a:visible:contains('choco-solver')").click();
+        cy.get("input:visible[name=q]").type('choco-solver').type("{enter}");
         cy.get("em:visible:contains('choco-solver')").click();
         cy.get("span:visible:contains('master')").click();
         cy.get("button:visible:contains('Tags')").click();
@@ -16,8 +15,7 @@ context('Case 3', () => {
     })
 
     it('Check tag commits on or-tools', () => {
-        cy.get("input:visible[name=q]").type('or-tools');
-        cy.get("a:visible:contains('or-tools')").click();
+        cy.get("input:visible[name=q]").type('or-tools').type("{enter}");
         cy.get("em:visible:contains('or-tools')").click();
         cy.get("span:visible:contains('stable')").click();
         cy.get("button:visible:contains('Tags')").click();
