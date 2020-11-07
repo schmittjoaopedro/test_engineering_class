@@ -5,7 +5,7 @@ context('Case 2', () => {
     })
 
     it('Check pagination of closed issues on choco-solver', () => {
-        cy.get("input:visible[name=q]").type('choco-solver').type("{enter}");
+        cy.get("input:visible[name='q']").type('choco-solver').type("{enter}");
         cy.get("em:visible:contains('choco-solver')").click();
         cy.get("span:visible:contains('Issues')").click();
         cy.get("a:visible:contains('Closed')").click();
@@ -13,7 +13,7 @@ context('Case 2', () => {
     })
 
     it('Check pagination of closed issues on or-tools', () => {
-        cy.get("input:visible[name=q]").type('or-tools').type("{enter}");
+        cy.get("input:visible[name='q']").type('or-tools').type("{enter}");
         cy.get("em:visible:contains('or-tools')").click();
         cy.get("span:visible:contains('Issues')").click();
         cy.get("a:visible:visible:contains('Closed')").click();
