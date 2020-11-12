@@ -1,0 +1,249 @@
+{
+  "id": "9fe0f2f5-bebc-40ce-b3ce-008d67a6eac3",
+  "version": "2.0",
+  "name": "fundamentus",
+  "url": "http://www.fundamentus.com.br",
+  "tests": [{
+    "id": "14cb0e33-1e58-436b-8bf9-689efea8178f",
+    "name": "case-4",
+    "commands": [{
+      "id": "838b76d2-8672-44e6-a1d3-d189bded6d60",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6b70a2a1-419f-4ffc-acd8-93e12f852e14",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1209x771",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c99cf142-c5fd-4c63-85f9-de9eea798177",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Busca avançada por empresa",
+      "targets": [
+        ["linkText=Busca avançada por empresa", "linkText"],
+        ["css=.avancada > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Busca avançada por empresa')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'buscaavancada.php')]", "xpath:href"],
+        ["xpath=//div/div/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Busca avançada por empresa')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "55336e7c-a0ff-41f2-9f6e-0184ebabf9b7",
+      "comment": "",
+      "command": "click",
+      "target": "name=firma_ebit_min",
+      "targets": [
+        ["name=firma_ebit_min", "name"],
+        ["css=tr:nth-child(9) input:nth-child(1)", "css:finder"],
+        ["xpath=//input[@name='firma_ebit_min']", "xpath:attributes"],
+        ["xpath=//tr[9]/td[2]/span/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "88556245-7ab4-4cea-a5f9-e03a203fe0c5",
+      "comment": "",
+      "command": "type",
+      "target": "name=firma_ebit_min",
+      "targets": [
+        ["name=firma_ebit_min", "name"],
+        ["css=tr:nth-child(9) input:nth-child(1)", "css:finder"],
+        ["xpath=//input[@name='firma_ebit_min']", "xpath:attributes"],
+        ["xpath=//tr[9]/td[2]/span/input", "xpath:position"]
+      ],
+      "value": "0"
+    }, {
+      "id": "88354f74-0023-4dac-a84b-1751acceb8a0",
+      "comment": "",
+      "command": "click",
+      "target": "name=firma_ebitda_min",
+      "targets": [
+        ["name=firma_ebitda_min", "name"],
+        ["css=tr:nth-child(10) input:nth-child(1)", "css:finder"],
+        ["xpath=//input[@name='firma_ebitda_min']", "xpath:attributes"],
+        ["xpath=//tr[10]/td[2]/span/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8b8bc7ed-c814-49e1-9f47-33939b92fcc0",
+      "comment": "",
+      "command": "type",
+      "target": "name=firma_ebitda_min",
+      "targets": [
+        ["name=firma_ebitda_min", "name"],
+        ["css=tr:nth-child(10) input:nth-child(1)", "css:finder"],
+        ["xpath=//input[@name='firma_ebitda_min']", "xpath:attributes"],
+        ["xpath=//tr[10]/td[2]/span/input", "xpath:position"]
+      ],
+      "value": "0"
+    }, {
+      "id": "06390af9-9c1c-4c6a-8408-826bd0870c5e",
+      "comment": "",
+      "command": "click",
+      "target": "name=liq_min",
+      "targets": [
+        ["name=liq_min", "name"],
+        ["css=tr:nth-child(16) input:nth-child(1)", "css:finder"],
+        ["xpath=//input[@name='liq_min']", "xpath:attributes"],
+        ["xpath=//tr[16]/td[2]/span/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "96220554-53c1-4209-8acb-bbc150cbe7eb",
+      "comment": "",
+      "command": "type",
+      "target": "name=liq_min",
+      "targets": [
+        ["name=liq_min", "name"],
+        ["css=tr:nth-child(16) input:nth-child(1)", "css:finder"],
+        ["xpath=//input[@name='liq_min']", "xpath:attributes"],
+        ["xpath=//tr[16]/td[2]/span/input", "xpath:position"]
+      ],
+      "value": "200000"
+    }, {
+      "id": "4cfcbe31-a0c0-40c1-b84f-d5e6b1698cc1",
+      "comment": "",
+      "command": "click",
+      "target": "css=.buscar",
+      "targets": [
+        ["css=.buscar", "css:finder"],
+        ["xpath=(//input[@type='image'])[2]", "xpath:attributes"],
+        ["xpath=//form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8bfcbcd2-91a7-43a5-b428-15613b0acd58",
+      "comment": "ev_ebit (sort)",
+      "command": "click",
+      "target": "linkText=EV/EBIT",
+      "targets": [
+        ["linkText=EV/EBIT", "linkText"],
+        ["css=.fd-column-10 > .fdTableSortTrigger", "css:finder"],
+        ["xpath=//a[contains(text(),'EV/EBIT')]", "xpath:link"],
+        ["xpath=//table[@id='resultado']/thead/tr/th[11]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[11]", "xpath:href"],
+        ["xpath=//th[11]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'EV/EBIT')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9896553f-7dbf-4691-afc7-1e02fd944996",
+      "comment": "ev_ebit (store)",
+      "command": "storeText",
+      "target": "css=tr:nth-child(1) > .col",
+      "targets": [
+        ["css=tr:nth-child(1) > .col", "css:finder"],
+        ["xpath=//table[@id='resultado']/tbody/tr/td[11]", "xpath:idRelative"],
+        ["xpath=//td[11]", "xpath:position"],
+        ["xpath=//td[contains(.,'0,20')]", "xpath:innerText"]
+      ],
+      "value": "ev_ebit"
+    }, {
+      "id": "fc7ea9b7-588a-42a8-964f-aa0ccd71f0b0",
+      "comment": "ev_ebit (calc > 0)",
+      "command": "executeScript",
+      "target": "return parseFloat(${ev_ebit}.replace(',','.')) > 0",
+      "targets": [],
+      "value": "ev_ebit_gt_0"
+    }, {
+      "id": "4cfe5100-1a6f-44b2-acf5-ffd08dabb936",
+      "comment": "ev_ebit (check > 0)",
+      "command": "assert",
+      "target": "ev_ebit_gt_0",
+      "targets": [],
+      "value": "true"
+    }, {
+      "id": "44d8274e-26d3-4093-b9d8-6128e1fd0633",
+      "comment": "ev_ebitda (sort)",
+      "command": "click",
+      "target": "css=.fd-column-11",
+      "targets": [
+        ["css=.fd-column-11", "css:finder"],
+        ["xpath=//table[@id='resultado']/thead/tr/th[12]", "xpath:idRelative"],
+        ["xpath=//th[12]", "xpath:position"],
+        ["xpath=//th[contains(.,'EV/EBITDA')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5e432ef8-b07d-4067-90e9-b507b438cb14",
+      "comment": "ev_ebitda (store)",
+      "command": "storeText",
+      "target": "css=tr:nth-child(1) > .col",
+      "targets": [
+        ["css=tr:nth-child(1) > td:nth-child(12)", "css:finder"],
+        ["xpath=//table[@id='resultado']/tbody/tr/td[12]", "xpath:idRelative"],
+        ["xpath=//td[12]", "xpath:position"],
+        ["xpath=//td[contains(.,'0,19')]", "xpath:innerText"]
+      ],
+      "value": "ev_ebitda"
+    }, {
+      "id": "dfbff380-5de8-4008-bc80-c198ecdb3533",
+      "comment": "ev_ebitda (calc > 0)",
+      "command": "executeScript",
+      "target": "return parseFloat(${ev_ebitda}.replace(',','.')) > 0",
+      "targets": [],
+      "value": "ev_ebitda_gt_0"
+    }, {
+      "id": "e91a558e-a6a1-47a3-aa95-471b1065fe59",
+      "comment": "ev_ebitda (check > 0)",
+      "command": "assert",
+      "target": "ev_ebitda_gt_0",
+      "targets": [],
+      "value": "true"
+    }, {
+      "id": "27d40ba3-c7cd-4eb0-95cd-859375d63b2b",
+      "comment": "liq_2m (sort)",
+      "command": "click",
+      "target": "css=.fd-column-17",
+      "targets": [
+        ["css=.fd-column-17", "css:finder"],
+        ["xpath=//table[@id='resultado']/thead/tr/th[18]", "xpath:idRelative"],
+        ["xpath=//th[18]", "xpath:position"],
+        ["xpath=//th[contains(.,'Liq.2meses')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "508710ca-2824-40a0-8a64-3077540fd2e2",
+      "comment": "liq_2m (store)",
+      "command": "storeText",
+      "target": "css=tr:nth-child(1) > .col",
+      "targets": [
+        ["css=tr:nth-child(1) > .col", "css:finder"],
+        ["xpath=//table[@id='resultado']/tbody/tr/td[18]", "xpath:idRelative"],
+        ["xpath=//td[18]", "xpath:position"],
+        ["xpath=//td[contains(.,'229.392,00')]", "xpath:innerText"]
+      ],
+      "value": "liq_2m"
+    }, {
+      "id": "252160a9-c562-4b41-bd21-010dbe316d4c",
+      "comment": "liq_2m (calc > 0)",
+      "command": "executeScript",
+      "target": "return parseFloat(${liq_2m}.replace(',','.')) > 0",
+      "targets": [],
+      "value": "liq_2m_gt_0"
+    }, {
+      "id": "55a357ff-dc47-4938-be62-3f29174b8148",
+      "comment": "liq_2m (check > 0)",
+      "command": "assert",
+      "target": "liq_2m_gt_0",
+      "targets": [],
+      "value": "true"
+    }]
+  }],
+  "suites": [{
+    "id": "354a38c5-69fd-47c8-87bc-2abca7e12e5e",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["http://www.fundamentus.com.br/"],
+  "plugins": []
+}

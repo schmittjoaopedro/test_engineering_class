@@ -1,0 +1,158 @@
+{
+  "id": "9fe0f2f5-bebc-40ce-b3ce-008d67a6eac3",
+  "version": "2.0",
+  "name": "fundamentus",
+  "url": "http://www.fundamentus.com.br",
+  "tests": [{
+    "id": "d93dee3a-62b6-4110-ba71-eb42e29797b8",
+    "name": "case-1",
+    "commands": [{
+      "id": "d762c692-d774-47a8-b2ab-8de5e509026f",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "27450005-db83-41be-b985-9af3347543f0",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1216x617",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a399d078-fe58-44c1-812d-908742b8761d",
+      "comment": "",
+      "command": "click",
+      "target": "id=completar",
+      "targets": [
+        ["id=completar", "id"],
+        ["name=papel", "name"],
+        ["css=#completar", "css:finder"],
+        ["xpath=//input[@id='completar']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a4deced8-c294-4c9a-a778-5c72d647e7c8",
+      "comment": "",
+      "command": "type",
+      "target": "id=completar",
+      "targets": [
+        ["id=completar", "id"],
+        ["name=papel", "name"],
+        ["css=#completar", "css:finder"],
+        ["xpath=//input[@id='completar']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "WEGE3"
+    }, {
+      "id": "20c6c289-9be8-479e-94c7-f3c551783ff7",
+      "comment": "",
+      "command": "click",
+      "target": "css=.autocompleter-queried",
+      "targets": [
+        ["css=.autocompleter-queried", "css:finder"],
+        ["xpath=//body/ul/li/span", "xpath:position"],
+        ["xpath=//span[contains(.,'WEGE3')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4c6bca0a-0b1b-46fe-b875-5cd6c5ee5817",
+      "comment": "",
+      "command": "click",
+      "target": "css=.botao",
+      "targets": [
+        ["css=.botao", "css:finder"],
+        ["xpath=//input[@value='Exibir']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5a8364bf-3655-49b4-a7f8-7b44d5ef71bd",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.botao",
+      "targets": [
+        ["css=.botao", "css:finder"],
+        ["xpath=//input[@value='Exibir']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3ec21f58-35aa-453d-aa1d-c5f52c8d9f84",
+      "comment": "Verifica PAPEL = WEGE3",
+      "command": "assertText",
+      "target": "css=.w35 > .txt",
+      "targets": [
+        ["css=.w35 > .txt", "css:finder"],
+        ["xpath=//td[2]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'WEGE3')]", "xpath:innerText"]
+      ],
+      "value": "WEGE3"
+    }, {
+      "id": "d6a335f8-0c5c-4de5-877b-0d9bf62b4663",
+      "comment": "Verifica Setor = Máquinas e Equipamentos",
+      "command": "assertText",
+      "target": "linkText=Máquinas e Equipamentos",
+      "targets": [
+        ["linkText=Máquinas e Equipamentos", "linkText"],
+        ["css=tr:nth-child(4) a", "css:finder"],
+        ["xpath=//a[contains(text(),'Máquinas e Equipamentos')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'resultado.php?setor=10')]", "xpath:href"],
+        ["xpath=//span/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Máquinas e Equipamentos')]", "xpath:innerText"]
+      ],
+      "value": "Máquinas e Equipamentos"
+    }, {
+      "id": "89701300-2229-4d0b-8d3b-beeab738ac44",
+      "comment": "Verifica Sub-setor = Motores, Compressores e Outros",
+      "command": "assertText",
+      "target": "linkText=Motores, Compressores e Outros",
+      "targets": [
+        ["linkText=Motores, Compressores e Outros", "linkText"],
+        ["css=tr:nth-child(5) a", "css:finder"],
+        ["xpath=//a[contains(text(),'Motores, Compressores e Outros')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'resultado.php?segmento=17')]", "xpath:href"],
+        ["xpath=//tr[5]/td[2]/span/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Motores, Compressores e Outros')]", "xpath:innerText"]
+      ],
+      "value": "Motores, Compressores e Outros"
+    }, {
+      "id": "f94d4919-1d0d-4fb5-920d-a6312b476d34",
+      "comment": "Armazena cotação",
+      "command": "storeText",
+      "target": "css=.destaque:nth-child(4) > .txt",
+      "targets": [
+        ["css=.destaque:nth-child(4) > .txt", "css:finder"],
+        ["xpath=//td[4]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'80,59')]", "xpath:innerText"]
+      ],
+      "value": "quotation"
+    }, {
+      "id": "3419111e-c9aa-4aa6-977a-6fbd57a3601d",
+      "comment": "Calcula cotação > 0",
+      "command": "executeScript",
+      "target": "return parseFloat(${quotation}) > 0",
+      "targets": [],
+      "value": "quotationGreaterThanZero"
+    }, {
+      "id": "9b4a1c9f-7310-4b5a-884c-0cbe7a0f173e",
+      "comment": "Verifica cotação > 0",
+      "command": "assert",
+      "target": "quotationGreaterThanZero",
+      "targets": [],
+      "value": "true"
+    }]
+  }],
+  "suites": [{
+    "id": "354a38c5-69fd-47c8-87bc-2abca7e12e5e",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["d93dee3a-62b6-4110-ba71-eb42e29797b8"]
+  }],
+  "urls": ["http://www.fundamentus.com.br/"],
+  "plugins": []
+}

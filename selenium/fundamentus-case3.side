@@ -1,0 +1,132 @@
+{
+  "id": "9fe0f2f5-bebc-40ce-b3ce-008d67a6eac3",
+  "version": "2.0",
+  "name": "fundamentus",
+  "url": "http://www.fundamentus.com.br",
+  "tests": [{
+    "id": "d71e587d-a103-4d42-9a8d-5723a681612c",
+    "name": "case-3",
+    "commands": [{
+      "id": "0394dac8-3735-4f86-a2ec-05b1871a2263",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a40158ac-0125-476c-9205-72ed1879863e",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1206x769",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cd7af944-080a-413b-978f-bf5b1e67f7cd",
+      "comment": "",
+      "command": "click",
+      "target": "id=completar",
+      "targets": [
+        ["id=completar", "id"],
+        ["name=papel", "name"],
+        ["css=#completar", "css:finder"],
+        ["xpath=//input[@id='completar']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "374ad590-271e-46c9-a576-a869096e8de7",
+      "comment": "",
+      "command": "type",
+      "target": "id=completar",
+      "targets": [
+        ["id=completar", "id"],
+        ["name=papel", "name"],
+        ["css=#completar", "css:finder"],
+        ["xpath=//input[@id='completar']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "WEGE3"
+    }, {
+      "id": "a8f74747-f5c9-4269-90c6-de35000f8857",
+      "comment": "",
+      "command": "click",
+      "target": "css=.autocompleter-queried",
+      "targets": [
+        ["css=.autocompleter-queried", "css:finder"],
+        ["xpath=//body/ul/li/span", "xpath:position"],
+        ["xpath=//span[contains(.,'WEGE3')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3258b4ad-bdf4-4400-af37-007137b5e834",
+      "comment": "",
+      "command": "click",
+      "target": "css=.botao",
+      "targets": [
+        ["css=.botao", "css:finder"],
+        ["xpath=//input[@value='Exibir']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0eef4217-d740-4534-83c3-735fffecbf12",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Histórico de cotações",
+      "targets": [
+        ["linkText=Histórico de cotações", "linkText"],
+        ["css=#menu .cotacoes", "css:finder"],
+        ["xpath=//a[contains(text(),'Histórico de cotações')]", "xpath:link"],
+        ["xpath=//ul[@id='menu']/li[4]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'cotacoes.php?papel=WEGE3')]", "xpath:href"],
+        ["xpath=//ul[2]/li[4]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Histórico de cotações')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f4b28ac7-ea4b-4d69-9b97-6292f8442037",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.highcharts-input-group > g:nth-child(2) > text",
+      "targets": [],
+      "value": "24/02/2005"
+    }, {
+      "id": "61d497d5-1b68-4ad7-ab59-4768e65af6e3",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.highcharts-input-group > g:nth-child(4) > text",
+      "targets": [
+        ["css=.highcharts-input-group > g:nth-child(4) > text", "css:finder"]
+      ],
+      "value": "12/11/2020"
+    }, {
+      "id": "ee5aad24-09b7-4bda-aff6-c42519c2e1c7",
+      "comment": "",
+      "command": "click",
+      "target": "css=.highcharts-button:nth-child(5) > text",
+      "targets": [
+        ["css=.highcharts-button:nth-child(5) > text", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "a9d2a0ad-0595-4a83-82e1-a4dda5e9c1ee",
+      "comment": "",
+      "command": "assertNotText",
+      "target": "css=.highcharts-input-group > g:nth-child(2) > text",
+      "targets": [
+        ["css=.highcharts-input-group > g:nth-child(2) > text", "css:finder"]
+      ],
+      "value": "24/02/2005"
+    }]
+  }],
+  "suites": [{
+    "id": "354a38c5-69fd-47c8-87bc-2abca7e12e5e",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["http://www.fundamentus.com.br/"],
+  "plugins": []
+}

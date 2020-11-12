@@ -1,0 +1,184 @@
+{
+  "id": "9fe0f2f5-bebc-40ce-b3ce-008d67a6eac3",
+  "version": "2.0",
+  "name": "fundamentus",
+  "url": "http://www.fundamentus.com.br",
+  "tests": [{
+    "id": "9dfe2c46-f939-4adc-8875-9d1ee804e3b5",
+    "name": "case-2",
+    "commands": [{
+      "id": "1f10e430-a572-4374-ad00-5b5b901c9bc2",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cd460cad-f4f0-4f38-908d-3f6f01106cbd",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "914x576",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1ba90a64-2ea8-43f7-ae35-15af5b94b4e4",
+      "comment": "",
+      "command": "click",
+      "target": "id=completar",
+      "targets": [
+        ["id=completar", "id"],
+        ["name=papel", "name"],
+        ["css=#completar", "css:finder"],
+        ["xpath=//input[@id='completar']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "407fbed1-8976-4bae-89f6-a59223c3bdae",
+      "comment": "",
+      "command": "type",
+      "target": "id=completar",
+      "targets": [
+        ["id=completar", "id"],
+        ["name=papel", "name"],
+        ["css=#completar", "css:finder"],
+        ["xpath=//input[@id='completar']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "WEGE3"
+    }, {
+      "id": "c58b05da-3097-4e25-9938-7dab9d3dc4cb",
+      "comment": "",
+      "command": "click",
+      "target": "css=.example-info",
+      "targets": [
+        ["css=.example-info", "css:finder"],
+        ["xpath=//span[2]", "xpath:position"],
+        ["xpath=//span[contains(.,'WEG SA')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1f478317-060a-46ed-969d-5f618329f207",
+      "comment": "",
+      "command": "click",
+      "target": "css=.botao",
+      "targets": [
+        ["css=.botao", "css:finder"],
+        ["xpath=//input[@value='Exibir']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a624f0b0-9a11-4a3e-8f81-7d44ba5f08c5",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.botao",
+      "targets": [
+        ["css=.botao", "css:finder"],
+        ["xpath=//input[@value='Exibir']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d23dfbc9-4035-497f-9b69-31157208a31b",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "linkText=Gráficos",
+      "targets": [
+        ["linkText=Gráficos", "linkText"],
+        ["css=#menu .graficos", "css:finder"],
+        ["xpath=//a[contains(text(),'Gráficos')]", "xpath:link"],
+        ["xpath=//a[@onclick='poApple()']", "xpath:attributes"],
+        ["xpath=(//ul[@id='menu']/li[2]/a)[2]", "xpath:idRelative"],
+        ["xpath=//ul[2]/li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Gráficos')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "72354189-845f-461d-bb5a-48823f4eb45f",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Demonstrativos de resultados",
+      "targets": [
+        ["linkText=Demonstrativos de resultados", "linkText"],
+        ["css=li:nth-child(2) li:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Demonstrativos de resultados')]", "xpath:link"],
+        ["xpath=//ul[@id='menu']/li[2]/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'graficos.php?papel=WEGE3&tipo=2')]", "xpath:href"],
+        ["xpath=//li[2]/ul/li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Demonstrativos de resultados')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7ac758db-93fd-409e-aceb-ffa0f9e0ec0c",
+      "comment": "Check Receita Líquida",
+      "command": "assertElementPresent",
+      "target": "css=#anualizado1 > img",
+      "targets": [
+        ["css=#anualizado1 > img", "css:finder"],
+        ["xpath=//img[@alt='imagem ilustrativa']", "xpath:img"],
+        ["xpath=//div[@id='anualizado1']/img", "xpath:idRelative"],
+        ["xpath=//div/div/div/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a3644ffb-251d-4246-912f-0058019054e4",
+      "comment": "Check Margens",
+      "command": "assertElementPresent",
+      "target": "css=#anualizado2 > img",
+      "targets": [
+        ["css=#anualizado2 > img", "css:finder"],
+        ["xpath=(//img[@alt='imagem ilustrativa'])[3]", "xpath:img"],
+        ["xpath=//div[@id='anualizado2']/img", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1b249866-8ef9-4d04-b698-fbb97e2fd195",
+      "comment": "Check EBIT(mil)",
+      "command": "assertElementPresent",
+      "target": "css=#anualizado3 > img",
+      "targets": [
+        ["css=#anualizado3 > img", "css:finder"],
+        ["xpath=(//img[@alt='imagem ilustrativa'])[5]", "xpath:img"],
+        ["xpath=//div[@id='anualizado3']/img", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "084420aa-0c9c-4233-91f1-c19e15e0e811",
+      "comment": "Check Resultado Financeiro",
+      "command": "assertElementPresent",
+      "target": "css=#anualizado4 > img",
+      "targets": [
+        ["css=#anualizado4 > img", "css:finder"],
+        ["xpath=(//img[@alt='imagem ilustrativa'])[7]", "xpath:img"],
+        ["xpath=//div[@id='anualizado4']/img", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d7e73304-e450-48fe-a4de-2f7016aac64d",
+      "comment": "Check Lucro Líquido",
+      "command": "assertElementPresent",
+      "target": "css=#anualizado5 > img",
+      "targets": [
+        ["css=#anualizado5 > img", "css:finder"],
+        ["xpath=(//img[@alt='imagem ilustrativa'])[9]", "xpath:img"],
+        ["xpath=//div[@id='anualizado5']/img", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div/img", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "354a38c5-69fd-47c8-87bc-2abca7e12e5e",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["http://www.fundamentus.com.br/"],
+  "plugins": []
+}
