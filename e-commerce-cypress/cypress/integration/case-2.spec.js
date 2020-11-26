@@ -10,8 +10,8 @@ context('Case 2', () => {
         // seleciona a opção "Menores Preços" do campo de ordenar por
         cy.get("select[id='sort-by']").select("Menores Preços");
         // wait the loading symbol appear then disappear
-        cy.get("div[class*='lds-ring']", { timeout: 50000 });
-        cy.get("div[class*='lds-ring']").should("not.exist");
+        cy.get("div[class*='lds-ring']");
+        cy.get("div[class*='lds-ring']", { timeout: 50000 }).should("not.exist");
         // verifica que existem 25 elementos com o atributo 'to' contendo o texto "pfm_carac=smartphone" 
         cy.get("a[to*='pfm_carac=smartphone']").should('have.length', 24);
         // obtem a lista de preço para cada produto (elementos com o atributo 'to' contendo o texto "pfm_carac=smartphone")
