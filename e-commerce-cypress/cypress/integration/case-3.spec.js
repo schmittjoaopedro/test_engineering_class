@@ -17,7 +17,7 @@ context('Case 3', () => {
         cy.get("button[class*='src__PageButton']:contains('2')").click();
         // wait the loading symbol appear then disappear
         cy.get("div[class*='lds-ring']");
-        cy.get("div[class*='lds-ring']").should("not.be.visible");
+        cy.get("div[class*='lds-ring']").should("not.exist");
         // verifica se o nome do produto alterou
         cy.get("a[to*='pfm_carac=smartphone'] > span[class*='src__Name']:first")
             .then($secondName => expect($secondName.text()).to.not.equal(firstName));
