@@ -12,7 +12,7 @@ context('Case 6', () => {
         // obter campo do frete
         cy.get("input[placeholder='digite o CEP']").type("89256620").type("{enter}");
         // verifica se o resultado aparece
-        cy.get("span[class*='freight-option-price']").should('have.length.greaterThan', 0);
+        cy.get("span[class*='freight-option-price']", { timeout: 50000 }).should('exist');
     })
 
 })
